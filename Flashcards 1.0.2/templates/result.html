@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+{% block base %}
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<h1 style="text-align:center;">Score:</h1>
+<h1 style="text-align:center;">{{score}}/{{qno}}</h1>
+<br>
+<h3 style="text-align:center;">{{comment}}</h3>
+<br>
+<h1 style="text-align:center;">Your Response:</h1>
+
+<div class="container my-10">
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Q.No</th>
+                <th scope="col">Question</th>
+                <th scope="col">Answer</th>
+                <th scope="col">Response</th>
+                <th scope="col">Result</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for row in result %}
+            <tr>
+                <th scope="row">{{row[0]}}</th>
+                <td>{{row[1]}}</td>
+                <td>{{row[2]}}</td>
+                <td>{{row[3]}}</td>
+                <td>{{row[4]}}</td>
+            </tr>
+
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+<br>
+<br>
+<br>
+<div class="container">
+    <div class="text-center">
+        <a href="/records" type="button" class="btn btn-outline-dark"> View Previous Records </button></a>
+        <a href="/main" type="button" class="btn btn-outline-dark"> Go Home </button></a>
+    </div>
+</div>
+<br>
+<br>
+<br>
+{% endblock base %}

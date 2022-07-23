@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block base %}
+<br>
+<br>
+
+<div class="container my-5">
+    <h1 style="text-align:center;">Update Card:</h1>
+    <form action="/update_card/{{card.sno}}" method="POST">
+        <div class="mb-3">
+            <label for="title" class="form-label">Card Details</label>
+            <br>
+            <label for="title" class="form-label">In the format:
+                english_word,hindi_word,option1,option2,option3,option4</label>
+            <input type="text" class="form-control" name="card"
+                value='{{card.english}},{{card.hindi}},{{card.option1}},{{card.option2}},{{card.option3}},{{card.option4}}'>
+        </div>
+        <div class="container">
+            <div class="text-center">
+                <button type="submit" class="btn btn-dark">Update</button>
+            </div>
+        </div>
+    </form>
+</div>
+<br>
+<br>
+{% endblock base %}

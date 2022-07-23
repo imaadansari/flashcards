@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% block base %}
+<br>
+<br>
+<br>
+<br>
+<h1 style="text-align:center;">Welcome back, {{username}}!</h1>
+<br>
+<br>
+<br>
+<br>
+<h5 style="text-align:center;">Select your level of difficulty:</h5>
+<br>
+<div class="container">
+    <div class="text-center">
+
+        <a href="/question/5" type="button" class="btn btn-outline-success"> Easy </button></a>
+        <a href="/question/7" type="button" class="btn btn-outline-warning"> Medium </button></a>
+        <a href="/question/10" type="button" class="btn btn-outline-danger"> Hard </button></a>
+
+    </div>
+</div>
+<br>
+<br>
+<br>
+<div class="container">
+    <div class="text-center">
+        <a href="/deck" type="button" class="btn btn-dark"> View Deck </button></a>
+        <a href="/records" type="button" class="btn btn-dark"> View Previous Records </button></a>
+    </div>
+</div>
+<br>
+<br>
+{% endblock base %}

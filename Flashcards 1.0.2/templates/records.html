@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+{% block base %}
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<h1 style="text-align:center;">{{username}}'s previous records:</h1>
+
+<br>
+
+<div class="container my-10">
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Date & Time</th>
+                <th scope="col">Username</th>
+                <th scope="col">Total Marks</th>
+                <th scope="col">Marks Scored</th>
+                <th scope="col"></th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for record in records %}
+            <tr>
+                <th scope="row">{{record.date_created}}</th>
+                <td>{{record.username}}</td>
+                <td>{{record.out_of}}</td>
+                <td>{{record.score}}</td>
+                <td><a href="/delete/{{record.sno}}" type="button"
+                        class="btn btn-outline-dark btn-sm mx-1">Delete</button></a></td>
+            </tr>
+
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+<div class="container">
+    <div class="text-center">
+
+        <a href="/main" type="button" class="btn btn-outline-dark"> Go Home </button></a>
+    </div>
+</div>
+
+<br>
+<br>
+<br>
+{% endblock base %}

@@ -1,0 +1,74 @@
+{% extends 'base.html' %}
+{% block base %}
+<br>
+<br>
+
+<div class="container my-5">
+    <h1 style="text-align:center;">Add a Card:</h1>
+    <form action="/add_card" method="POST">
+        <div class="mb-3">
+            <label for="title" class="form-label">Card Details</label>
+            <br>
+            <label for="title" class="form-label">In the format:
+                english_word,hindi_word,option1,option2,option3,option4</label>
+            <input type="text" class="form-control" name="card">
+        </div>
+        <div class="container">
+            <div class="text-center">
+                <button type="submit" class="btn btn-dark">Add Card</button>
+            </div>
+        </div>
+    </form>
+</div>
+<br>
+<br>
+<h1 style="text-align:center;">Your Deck:</h1>
+
+<br>
+
+<div class="container my-10">
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">English</th>
+                <th scope="col">Hindi</th>
+                <th scope="col">Option 1</th>
+                <th scope="col">Option 2</th>
+                <th scope="col">Option 3</th>
+                <th scope="col">Option 4</th>
+                <th scope="col">Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for card in allCards %}
+            <tr>
+                <th scope="row">{{card.english}}</th>
+                <td>{{card.hindi}}</td>
+                <td>{{card.option1}}</td>
+                <td>{{card.option2}}</td>
+                <td>{{card.option3}}</td>
+                <td>{{card.option4}}</td>
+                <td><a href="/update_card/{{card.sno}}" type="button"
+                        class="btn btn-outline-dark btn-sm mx-1">Update</button></a>
+                    {% if allCards|length>10 %}
+                    <a href="/delete_card/{{card.sno}}" type="button"
+                        class="btn btn-outline-dark btn-sm mx-1">Delete</button></a>
+                    {% endif %}
+                </td>
+            </tr>
+
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+<div class="container">
+    <div class="text-center">
+        <a href="/main" type="button" class="btn btn-outline-dark"> Go Home </button></a>
+    </div>
+</div>
+
+<br>
+<br>
+<br>
+{% endblock base %}

@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% block base %}
+<br>
+<br>
+<br>
+<h5 style="text-align:center;">{{qno}} of {{total_questions}}</h5>
+<br>
+<h1 style="text-align:center;">{{card.english}}</h1>
+<br>
+<h5 style="text-align:center;">Select the correct meaning:</h5>
+<br>
+<div class="container-fluid" style="margin-left: 45%;">
+    <form action="#" method="POST">
+        <input type="radio" name="choice" value={{card.option1}}>
+        <label>
+            {{card.option1}}
+        </label>
+        <br>
+        <input type="radio" name="choice" value={{card.option2}}>
+        <label>
+            {{card.option2}}
+        </label>
+        <br>
+        <input type="radio" name="choice" value={{card.option3}}>
+        <label>
+            {{card.option3}}
+        </label>
+        <br>
+        <input type="radio" name="choice" value={{card.option4}}>
+        <label>
+            {{card.option4}}
+        </label>
+        <br>
+        <br>
+
+        <button type="submit" class="btn btn-dark">Next</button>
+    </form>
+
+</div>
+{% endblock base %}
